@@ -3,6 +3,8 @@
 	<target name="build" depends="prepare,tests" />
 	
 	<target name="prepare" description="Prepares the build">
+		<mkdir dir="./logs/tests" />
+		
 		<delete includeemptydirs="true">
 			<fileset dir="./logs/tests" includes="**/*"/>
 		</delete>
