@@ -14,11 +14,10 @@
         <exec executable="php" failonerror="true" dir=".">
         	<arg line="scripts/run-tests.sh --xml logs/tests --php /usr/bin/php Example" />
         </exec>
+        
+        <!-- http://stackoverflow.com/questions/3048100/how-do-i-test-to-see-that-a-directory-is-empty-in-ant -->
+        <fileset dir="./logs/tests" id="reportFileset" />
+        <pathconvert setonempty="false" property="reports" refid="reportFileset"/>
+		<fail unless="reports" message="XML report processing files missing - Simpletest hasn't exported the test results."/>
     </target>
-    
-    <!--<target name="checkout" description="Pulls the current revision files to the test site">
-            <exec executable="svn" failonerror="true" dir="${siteDirectory}">
-                    <arg line="update -r ${build.vcs.number}" />
-            </exec>
-	</target>-->
 </project>
