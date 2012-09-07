@@ -11,7 +11,7 @@ class ExampleTest extends DrupalUnitTestCase {
 	
 	public function testExampleHello()
 	{
-		$this->assertEqual( TRUE, example_hello() );
+		$this->assertEqual( FALSE, example_hello() );
 	}
 }
 ?>
