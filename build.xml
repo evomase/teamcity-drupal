@@ -11,7 +11,7 @@
 	</target>
 	
 	<target name="tests" description="Runs the tests">
-        <exec executable="/usr/bin/php" failonerror="true" dir=".">
+        <exec executable="php" failonerror="true" dir=".">
         	<arg line="scripts/run-tests.sh --xml logs/tests --php /usr/bin/php Example" />
         </exec>
     </target>
