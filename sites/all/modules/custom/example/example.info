@@ -1,0 +1,5 @@
+name = Example
+description = Example module for testing
+core = 7.x
+files[] = example.test
+version = 7.x
