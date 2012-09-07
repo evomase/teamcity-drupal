@@ -1,0 +1,17 @@
+<?php
+class ExampleTest extends DrupalUnitTestCase {
+	
+	public static function getInfo()
+	{
+		return array(
+				'name' => 'Example Test',
+				'description' => 'Test case for the example module',
+				'group' => 'Example' );
+	}
+	
+	public function testExampleHello()
+	{
+		$this->assertEqual( TRUE, example_hello() );
+	}
+}
+?>

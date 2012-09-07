@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="drupal" default="build" basedir=".">
+	<target name="build" depends="prepare,tests" />
+	
+    <!--<target name="checkout" description="Pulls the current revision files to the test site">
+            <exec executable="svn" failonerror="true" dir="${siteDirectory}">
+                    <arg line="update -r ${build.vcs.number}" />
+            </exec>
+	</target>-->
+</project>

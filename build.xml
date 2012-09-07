@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="drupal" default="build" basedir=".">
+	<target name="build" depends="prepare,tests" />
+	
+	<target name="prepare" description="Prepares the build">
+		<delete includeemptydirs="true">
+			<fileset dir="./logs/tests" includes="**/*"/>
+		</delete>
+	</target>
+	
+	<target name="tests" description="Runs the tests">
+        <exec executable="php" failonerror="true" dir=".">
+        	<arg line="scripts/run-tests.sh --xml logs/tests --php /usr/bin/php Example" />
+        </exec>
+    </target>
+    
+    <!--<target name="checkout" description="Pulls the current revision files to the test site">
+            <exec executable="svn" failonerror="true" dir="${siteDirectory}">
+                    <arg line="update -r ${build.vcs.number}" />
+            </exec>
+	</target>-->
+</project>
