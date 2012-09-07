@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="drupal" default="checkout" basedir=".">
-    <!--<target name="checkout" description="Pulls the current revision files to the test site">
-            <exec executable="svn" failonerror="true" dir="${siteDirectory}">
-                    <arg line="update -r ${build.vcs.number}" />
-            </exec>
-	</target>-->
+    <target name="checkout" description="Pulls the current revision files to the site">
+    	<exec executable="git" failonerror="true" dir="${siteDirectory}">
+			<arg line="checkout ${build.vcs.number}" />
+		</exec>
+	</target>
 </project>
