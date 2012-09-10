@@ -2,10 +2,11 @@
 <project name="drupal" default="checkout" basedir=".">
     <target name="checkout" description="Pulls the current revision files to the site">
     	<!--
-    	<exec executable="git" failonerror="true" dir="${siteDirectory}"> -->
+    	<exec executable="git" failonerror="true" dir="${site.directory}"> -->
     		<!-- http://stackoverflow.com/questions/573585/whats-the-git-equivalent-of-svn-update-r -->
 			<!-- <arg line="checkout ${build.vcs.number}" />
 		</exec> -->
-		<echo message="git checkout ${build.vcs.number}" />
+		
+		<echo message="Checked out to revision ${build.vcs.number}" />
 	</target>
 </project>

@@ -8,16 +8,20 @@
 		<delete includeemptydirs="true">
 			<fileset dir="./logs/tests" includes="**/*"/>
 		</delete>
+		
+		<echo message="Cleared all log files." />
 	</target>
 	
 	<target name="tests" description="Runs the tests">
         <exec executable="php" failonerror="true" dir=".">
-        	<arg line="scripts/run-tests.sh --xml logs/tests --php /usr/bin/php Example" />
+        	<arg line="scripts/run-tests.sh --xml logs/tests --url ${site.url} --php /usr/bin/php Example" />
         </exec>
         
         <!-- http://stackoverflow.com/questions/3048100/how-do-i-test-to-see-that-a-directory-is-empty-in-ant -->
         <fileset dir="./logs/tests" id="reportFileset" />
         <pathconvert setonempty="false" property="reports" refid="reportFileset"/>
 		<fail unless="reports" message="XML report processing files missing - Simpletest hasn't exported the test results."/>
+		
+		<echo message="Tests completed" />
     </target>
 </project>
