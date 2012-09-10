@@ -14,7 +14,7 @@
 	
 	<target name="tests" description="Runs the tests">
         <exec executable="php" failonerror="true" dir=".">
-        	<arg line="scripts/run-tests.sh --xml logs/tests --url ${site.url} --php /usr/bin/php Block" />
+        	<arg line="scripts/run-tests.sh --xml logs/tests --url ${site.url} --php /usr/bin/php Example" />
         </exec>
         
         <!-- http://stackoverflow.com/questions/3048100/how-do-i-test-to-see-that-a-directory-is-empty-in-ant -->
